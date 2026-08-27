@@ -3,56 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f7e9e9">
-<title>Tu & Io — Il nostro album</title>
+
+<title>Il Nostro Album ❤️</title>
 
 <style>
-:root{
-    --bg:#f9f3f1;
-    --paper:#fffdfb;
-    --paper2:#f6ebe7;
-    --text:#392b2b;
-    --muted:#907878;
-    --pink:#c96f7b;
-    --pink-dark:#a95260;
-    --rose:#e7b5bb;
-    --gold:#c8a56a;
-    --line:#ead9d6;
-    --shadow:0 20px 60px rgba(74,42,45,.13);
-    --radius:28px;
-}
 
 *{
     box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
+    font-family:Georgia, "Times New Roman", serif;
     background:
-        radial-gradient(circle at 10% 10%,rgba(231,181,187,.22),transparent 25%),
-        radial-gradient(circle at 90% 20%,rgba(200,165,106,.12),transparent 22%),
-        var(--bg);
-    color:var(--text);
-    font-family:Georgia,"Times New Roman",serif;
+        radial-gradient(circle at top left, #fff8f5, transparent 35%),
+        radial-gradient(circle at bottom right, #f8e9ed, transparent 35%),
+        #f5eee9;
+    color:#392d2d;
+    min-height:100vh;
 }
 
-button,
-input,
-textarea,
-select{
-    font:inherit;
+/* =========================
+   HEADER
+========================= */
+
+header{
+    padding:25px 20px 10px;
+    text-align:center;
 }
 
-button{
-    cursor:pointer;
+.logo{
+    font-size:13px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#a06b76;
+    margin-bottom:8px;
 }
 
-.hidden{
-    display:none!important;
+header h1{
+    font-size:34px;
+    font-weight:normal;
+}
+
+header p{
+    margin-top:8px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    color:#8d7777;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:25px auto 60px;
 }
 
 /* =========================
@@ -60,563 +68,207 @@ button{
 ========================= */
 
 .hero{
-    min-height:100vh;
     position:relative;
+    min-height:390px;
+    border-radius:25px;
+    overflow:hidden;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    overflow:hidden;
-    padding:30px;
-}
+    margin-bottom:35px;
 
-.hero::before{
-    content:"";
-    position:absolute;
-    width:650px;
-    height:650px;
-    border-radius:50%;
-    border:1px solid rgba(201,111,123,.12);
+    background:
+        linear-gradient(
+            rgba(65,38,40,.35),
+            rgba(65,38,40,.48)
+        ),
+        url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
-    max-width:900px;
+    color:white;
+    padding:30px;
 }
 
 .hero-small{
     font-family:Arial,sans-serif;
-    font-size:11px;
-    letter-spacing:5px;
+    letter-spacing:4px;
     text-transform:uppercase;
-    color:var(--pink);
-}
-
-.hero h1{
-    font-size:clamp(70px,14vw,150px);
-    line-height:.82;
-    font-weight:400;
-    margin:28px 0;
-}
-
-.hero h1 span{
-    display:block;
-    font-size:.35em;
-    font-style:italic;
-    margin:25px 0;
-    color:var(--pink);
-}
-
-.hero-subtitle{
-    max-width:650px;
-    margin:auto;
-    color:var(--muted);
-    font-family:Arial,sans-serif;
-    line-height:1.8;
-    font-size:15px;
-}
-
-.hero-date{
-    margin-top:30px;
-    color:var(--gold);
-    font-size:18px;
-}
-
-.scroll-down{
-    margin-top:70px;
-    color:var(--muted);
-    font-family:Arial,sans-serif;
     font-size:11px;
-    letter-spacing:3px;
-    animation:bounce 2s infinite;
+    margin-bottom:15px;
 }
 
-@keyframes bounce{
-    50%{transform:translateY(8px)}
+.hero h2{
+    font-size:48px;
+    font-weight:normal;
+    margin-bottom:12px;
 }
 
-.floating-heart{
-    position:absolute;
-    color:var(--pink);
-    opacity:.25;
-    font-size:30px;
-    animation:float 7s ease-in-out infinite;
-}
-
-.heart1{left:10%;top:22%}
-.heart2{right:12%;top:27%;animation-delay:1s}
-.heart3{left:17%;bottom:20%;animation-delay:2s}
-.heart4{right:20%;bottom:15%;animation-delay:3s}
-
-@keyframes float{
-    50%{
-        transform:translateY(-25px) rotate(10deg);
-    }
+.hero p{
+    font-size:18px;
+    font-style:italic;
 }
 
 /* =========================
-   NAV
+   SECTION TITLE
 ========================= */
-
-.nav{
-    position:sticky;
-    top:0;
-    z-index:50;
-    display:flex;
-    justify-content:center;
-    gap:5px;
-    padding:10px;
-    background:rgba(249,243,241,.9);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid var(--line);
-    overflow-x:auto;
-}
-
-.nav button{
-    border:0;
-    background:transparent;
-    color:var(--muted);
-    padding:12px 17px;
-    border-radius:30px;
-    white-space:nowrap;
-    font-family:Arial,sans-serif;
-    font-size:12px;
-}
-
-.nav button:hover{
-    background:white;
-    color:var(--pink);
-}
-
-/* =========================
-   MAIN
-========================= */
-
-main{
-    max-width:1200px;
-    margin:auto;
-    padding:90px 22px;
-}
-
-.section{
-    margin-bottom:130px;
-}
 
 .section-title{
-    margin-bottom:35px;
-}
-
-.section-label{
-    color:var(--pink);
-    text-transform:uppercase;
-    letter-spacing:4px;
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:20px;
 }
 
 .section-title h2{
-    font-size:50px;
-    font-weight:400;
-    margin:10px 0;
+    font-size:25px;
+    font-weight:normal;
 }
 
-.section-title p{
-    color:var(--muted);
-    font-family:Arial,sans-serif;
-}
-
-/* =========================
-   STORY
-========================= */
-
-.story-card{
-    background:rgba(255,253,251,.82);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:45px;
-}
-
-.story-grid{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:50px;
-}
-
-.big-quote{
-    font-size:32px;
-    line-height:1.45;
-    font-style:italic;
-}
-
-.story-text{
-    color:var(--muted);
-    line-height:1.9;
-    font-family:Arial,sans-serif;
-    font-size:14px;
-}
-
-/* =========================
-   TIMELINE
-========================= */
-
-.timeline{
-    position:relative;
-    padding-left:32px;
-}
-
-.timeline::before{
-    content:"";
-    position:absolute;
-    left:7px;
-    top:5px;
-    bottom:5px;
-    width:1px;
-    background:var(--line);
-}
-
-.timeline-item{
-    position:relative;
-    margin-bottom:32px;
-}
-
-.timeline-item::before{
-    content:"";
-    position:absolute;
-    left:-30px;
-    top:5px;
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:var(--pink);
-    box-shadow:0 0 0 6px #f9e5e8;
-}
-
-.timeline-date{
-    color:var(--pink);
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.timeline-item h3{
-    font-weight:400;
-    margin:7px 0;
-}
-
-/* =========================
-   MEMORY CARDS
-========================= */
-
-.memory-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
-.memory-card{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:30px;
-    box-shadow:var(--shadow);
-    transition:.3s;
-}
-
-.memory-card:hover{
-    transform:translateY(-5px);
-}
-
-.memory-category{
-    color:var(--pink);
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-
-.memory-card h3{
-    font-size:27px;
-    font-weight:400;
-    margin:12px 0;
-}
-
-.memory-info{
-    color:var(--muted);
-    font-family:Arial,sans-serif;
-    font-size:12px;
-}
-
-.memory-card p{
-    line-height:1.8;
-    color:#654f4f;
-}
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery-toolbar{
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    align-items:center;
-    margin-bottom:25px;
-    flex-wrap:wrap;
-}
-
-.filters{
-    display:flex;
-    gap:7px;
-    flex-wrap:wrap;
-}
-
-.filter{
-    border:1px solid var(--line);
-    background:white;
-    color:var(--muted);
-    padding:9px 14px;
-    border-radius:30px;
-    font-family:Arial,sans-serif;
-    font-size:11px;
-}
-
-.filter.active{
-    background:var(--pink);
+.add-button{
+    border:none;
+    background:#8f5964;
     color:white;
-    border-color:var(--pink);
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.photo-card{
-    position:relative;
-    aspect-ratio:1/1;
-    border-radius:22px;
-    overflow:hidden;
-    background:#eee;
+    padding:11px 17px;
+    border-radius:30px;
     cursor:pointer;
-    box-shadow:0 12px 35px rgba(74,42,45,.1);
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    transition:.2s;
 }
 
-.photo-card img{
+.add-button:hover{
+    transform:translateY(-2px);
+    background:#754852;
+}
+
+/* =========================
+   ALBUMS
+========================= */
+
+.albums{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.album{
+    position:relative;
+    height:300px;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 12px 30px rgba(73,43,47,.15);
+    transition:.3s;
+    background:#ddd;
+}
+
+.album:hover{
+    transform:translateY(-7px) rotate(.3deg);
+}
+
+.album img{
     width:100%;
     height:100%;
     object-fit:cover;
     transition:.5s;
 }
 
-.photo-card:hover img{
+.album:hover img{
     transform:scale(1.06);
 }
 
-.photo-overlay{
+.album-overlay{
     position:absolute;
-    left:12px;
-    right:12px;
-    bottom:12px;
-    padding:12px;
-    background:rgba(255,255,255,.9);
-    border-radius:15px;
-    font-family:Arial,sans-serif;
-    font-size:12px;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:55px 20px 20px;
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.75)
+        );
+    color:white;
 }
 
-.photo-delete{
+.album-overlay h3{
+    font-size:25px;
+    font-weight:normal;
+}
+
+.album-overlay p{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    margin-top:5px;
+    opacity:.85;
+}
+
+.heart{
     position:absolute;
-    right:10px;
-    top:10px;
-    width:35px;
-    height:35px;
-    border:0;
+    right:15px;
+    top:15px;
+    width:38px;
+    height:38px;
     border-radius:50%;
     background:rgba(255,255,255,.9);
-    color:#a95260;
-}
-
-/* =========================
-   LETTER
-========================= */
-
-.letter{
-    background:
-        linear-gradient(rgba(255,253,251,.95),rgba(255,253,251,.95)),
-        repeating-linear-gradient(
-            transparent,
-            transparent 34px,
-            #ead9d6 35px
-        );
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:55px;
-    box-shadow:var(--shadow);
-}
-
-.letter-content{
-    max-width:780px;
-    margin:auto;
-    font-size:25px;
-    line-height:1.8;
-    font-style:italic;
-    white-space:pre-wrap;
-}
-
-/* =========================
-   ADMIN
-========================= */
-
-.admin{
-    background:#302626;
-    color:white;
-    border-radius:35px;
-    padding:40px;
-    box-shadow:var(--shadow);
-}
-
-.admin h2{
-    font-weight:400;
-}
-
-.admin-subtitle{
-    color:#c9b5b5;
-    font-family:Arial,sans-serif;
-    font-size:13px;
-}
-
-.form{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-    margin-top:30px;
-}
-
-.form input,
-.form textarea,
-.form select{
-    width:100%;
-    border:1px solid #574747;
-    background:#3c3030;
-    color:white;
-    border-radius:15px;
-    padding:14px;
-    outline:none;
-}
-
-.form textarea{
-    min-height:130px;
-    resize:vertical;
-}
-
-.full{
-    grid-column:1/-1;
-}
-
-.primary{
-    border:0;
-    background:var(--pink);
-    color:white;
-    border-radius:30px;
-    padding:13px 22px;
-    font-family:Arial,sans-serif;
-    font-weight:bold;
-}
-
-.secondary{
-    border:1px solid var(--line);
-    background:white;
-    color:var(--pink-dark);
-    border-radius:30px;
-    padding:13px 22px;
-    font-family:Arial,sans-serif;
-}
-
-.admin .secondary{
-    border-color:#574747;
-    background:transparent;
-    color:#e7c9cd;
-}
-
-.actions{
     display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:15px;
-}
-
-.help{
-    color:#bdaaaa;
-    font-family:Arial,sans-serif;
-    font-size:12px;
-    line-height:1.7;
-}
-
-/* =========================
-   EMPTY
-========================= */
-
-.empty{
-    grid-column:1/-1;
-    text-align:center;
-    padding:60px 25px;
-    border:1px dashed var(--line);
-    border-radius:25px;
-    color:var(--muted);
-    font-family:Arial,sans-serif;
-}
-
-/* =========================
-   LIGHTBOX
-========================= */
-
-.lightbox{
-    position:fixed;
-    inset:0;
-    background:rgba(25,15,17,.94);
-    z-index:200;
-    display:none;
     align-items:center;
     justify-content:center;
-    padding:20px;
+    font-size:18px;
 }
 
-.lightbox.open{
+/* =========================
+   MEMORY TIMELINE
+========================= */
+
+.timeline{
+    margin-top:50px;
+}
+
+.memory{
+    background:rgba(255,255,255,.7);
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:15px;
     display:flex;
+    gap:18px;
+    align-items:center;
+    box-shadow:0 5px 20px rgba(70,40,40,.06);
 }
 
-.lightbox img{
-    max-width:95vw;
-    max-height:88vh;
-    border-radius:20px;
-    object-fit:contain;
+.memory img{
+    width:95px;
+    height:95px;
+    object-fit:cover;
+    border-radius:13px;
 }
 
-.lightbox-close{
-    position:absolute;
-    right:20px;
-    top:15px;
-    border:0;
-    background:transparent;
-    color:white;
-    font-size:42px;
+.memory-info{
+    flex:1;
 }
 
-.lightbox-caption{
-    position:absolute;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    color:white;
+.memory-date{
     font-family:Arial,sans-serif;
-    background:rgba(0,0,0,.5);
-    padding:10px 18px;
-    border-radius:20px;
+    font-size:11px;
+    color:#a16d77;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.memory h3{
+    font-weight:normal;
+    margin:5px 0;
+    font-size:20px;
+}
+
+.memory p{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    color:#776868;
 }
 
 /* =========================
@@ -625,584 +277,877 @@ main{
 
 footer{
     text-align:center;
-    padding:50px 20px 80px;
-    color:var(--muted);
+    padding:30px;
+    color:#9a8585;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+}
+
+footer span{
+    color:#b36574;
+    font-size:17px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(39,25,27,.7);
+    z-index:1000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:520px;
+    max-height:90vh;
+    overflow:auto;
+    background:#fffaf8;
+    border-radius:22px;
+    padding:28px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:15px;
+    border:none;
+    background:none;
+    font-size:25px;
+    cursor:pointer;
+    color:#775c60;
+}
+
+.modal-box h2{
+    font-weight:normal;
+    margin-bottom:20px;
+}
+
+.field{
+    margin-bottom:16px;
+}
+
+.field label{
+    display:block;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    margin-bottom:6px;
+    color:#765e61;
+}
+
+.field input,
+.field textarea{
+    width:100%;
+    border:1px solid #eadbdd;
+    background:white;
+    border-radius:10px;
+    padding:12px;
+    font-family:Arial,sans-serif;
+    outline:none;
+}
+
+.field textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.file{
+    border:2px dashed #dec5ca;
+    padding:20px;
+    border-radius:14px;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    color:#806c6e;
+}
+
+.save{
+    width:100%;
+    border:none;
+    background:#8f5964;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+/* =========================
+   BOOK MODAL
+========================= */
+
+.book-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    background:rgba(29,19,21,.82);
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+}
+
+.book-modal.active{
+    display:flex;
+}
+
+.book{
+    width:min(950px,95vw);
+    height:min(680px,88vh);
+    position:relative;
+    perspective:1800px;
+}
+
+.book-page{
+    position:absolute;
+    inset:0;
+    background:#fffdfb;
+    border-radius:5px 18px 18px 5px;
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.4);
+    overflow:hidden;
+    transform-origin:left center;
+    transition:transform .8s ease;
+}
+
+.book-page.flipped{
+    transform:rotateY(-180deg);
+}
+
+.page-content{
+    height:100%;
+    padding:35px;
+    overflow:auto;
+}
+
+.page-number{
+    position:absolute;
+    bottom:15px;
+    left:0;
+    right:0;
+    text-align:center;
+    color:#9d8a8a;
     font-family:Arial,sans-serif;
     font-size:11px;
-    letter-spacing:1px;
+}
+
+.book-photo{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.book-title{
+    font-size:32px;
+    font-weight:normal;
+}
+
+.book-text{
+    font-family:Arial,sans-serif;
+    line-height:1.6;
+    color:#675858;
+}
+
+.book-controls{
+    position:absolute;
+    bottom:-60px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.book-controls button{
+    border:none;
+    border-radius:30px;
+    padding:10px 20px;
+    background:white;
+    cursor:pointer;
+}
+
+.book-close{
+    position:absolute;
+    top:-50px;
+    right:0;
+    border:none;
+    background:white;
+    border-radius:50%;
+    width:38px;
+    height:38px;
+    cursor:pointer;
+    font-size:18px;
 }
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width:800px){
+@media(max-width:600px){
+
+    header h1{
+        font-size:28px;
+    }
 
     .hero{
-        min-height:90vh;
+        min-height:330px;
     }
 
-    .hero h1{
-        font-size:80px;
+    .hero h2{
+        font-size:37px;
     }
 
-    main{
-        padding:65px 15px;
+    .hero p{
+        font-size:15px;
     }
 
-    .story-grid{
-        grid-template-columns:1fr;
+    .albums{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
     }
 
-    .story-card{
-        padding:28px;
+    .album{
+        height:230px;
     }
 
-    .big-quote{
-        font-size:26px;
+    .album-overlay{
+        padding:40px 12px 12px;
     }
 
-    .memory-grid{
-        grid-template-columns:1fr;
+    .album-overlay h3{
+        font-size:18px;
     }
 
-    .gallery{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
+    .album-overlay p{
+        font-size:10px;
     }
 
-    .letter{
-        padding:30px;
+    .heart{
+        width:32px;
+        height:32px;
+        font-size:15px;
     }
 
-    .letter-content{
-        font-size:20px;
+    .memory img{
+        width:75px;
+        height:75px;
     }
 
-    .form{
-        grid-template-columns:1fr;
+    .memory{
+        gap:12px;
     }
 
-    .full{
-        grid-column:auto;
+    .memory h3{
+        font-size:17px;
     }
 
-    .admin{
-        padding:25px;
+    .book{
+        height:75vh;
     }
 
-    .section-title h2{
-        font-size:39px;
+    .page-content{
+        padding:22px;
     }
+
+    .book-photo{
+        height:300px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     COPERTINA
-========================= -->
+<header>
 
-<header class="hero" id="home">
-
-    <div class="floating-heart heart1">♥</div>
-    <div class="floating-heart heart2">♡</div>
-    <div class="floating-heart heart3">♥</div>
-    <div class="floating-heart heart4">♡</div>
-
-    <div class="hero-content">
-
-        <div class="hero-small">
-            Il nostro piccolo mondo
-        </div>
-
-        <h1>
-            Tu
-            <span>&amp;</span>
-            Io
-        </h1>
-
-        <div class="hero-subtitle">
-            Tutte le nostre foto, i nostri ricordi,
-            i nostri viaggi e tutte quelle piccole cose
-            che meritano di essere ricordate.
-        </div>
-
-        <div class="hero-date">
-            La nostra storia continua...
-        </div>
-
-        <div class="scroll-down">
-            SCORRI PER INIZIARE ↓
-        </div>
-
+    <div class="logo">
+        I nostri ricordi
     </div>
+
+    <h1>
+        Il Nostro Album ❤️
+    </h1>
+
+    <p>
+        Tutti i nostri momenti più belli, insieme.
+    </p>
 
 </header>
 
 
-<!-- =========================
-     MENU
-========================= -->
+<div class="container">
 
-<nav class="nav">
+    <!-- HERO -->
 
-    <button onclick="goTo('home')">
-        Inizio
-    </button>
+    <section class="hero">
 
-    <button onclick="goTo('storia')">
-        La nostra storia
-    </button>
+        <div class="hero-content">
 
-    <button onclick="goTo('ricordi')">
-        Ricordi
-    </button>
-
-    <button onclick="goTo('foto')">
-        Foto
-    </button>
-
-    <button onclick="goTo('lettera')">
-        Lettera
-    </button>
-
-    <button onclick="goTo('gestisci')">
-        + Aggiungi
-    </button>
-
-</nav>
-
-
-<main>
-
-<!-- =========================
-     STORIA
-========================= -->
-
-<section class="section" id="storia">
-
-    <div class="section-title">
-
-        <div class="section-label">
-            Capitolo 01
-        </div>
-
-        <h2>
-            La nostra storia
-        </h2>
-
-        <p>
-            Tutto quello che ci ha portati fino a qui.
-        </p>
-
-    </div>
-
-    <div class="story-card">
-
-        <div class="story-grid">
-
-            <div>
-
-                <div class="big-quote">
-                    “Le storie più belle sono quelle
-                    che continuano a essere scritte.”
-                </div>
-
-                <p class="story-text">
-                    Questo spazio è vostro.
-                    Puoi modificarlo direttamente nel codice
-                    e raccontare come vi siete conosciuti,
-                    il vostro primo appuntamento,
-                    il primo viaggio e tutti i momenti
-                    che per voi hanno un significato speciale.
-                </p>
-
+            <div class="hero-small">
+                La nostra storia
             </div>
 
-            <div>
+            <h2>
+                Noi due
+            </h2>
 
-                <div class="section-label">
-                    Timeline
+            <p>
+                "Tra tutti i posti del mondo,
+                sceglierei sempre te."
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ALBUM -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                I nostri album
+            </h2>
+
+            <button
+                class="add-button"
+                onclick="openAlbumModal()">
+
+                + Nuovo album
+
+            </button>
+
+        </div>
+
+
+        <div class="albums" id="albums">
+
+            <!-- VACANZE -->
+
+            <div
+                class="album"
+                onclick="openBook('Vacanze')">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80">
+
+                <div class="heart">
+                    ❤️
                 </div>
 
-                <div class="timeline" id="timeline">
+                <div class="album-overlay">
+
+                    <h3>
+                        Vacanze
+                    </h3>
+
+                    <p>
+                        I nostri viaggi insieme
+                    </p>
+
                 </div>
 
             </div>
 
+
+            <!-- WEEKEND -->
+
+            <div
+                class="album"
+                onclick="openBook('Weekend')">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80">
+
+                <div class="heart">
+                    ❤️
+                </div>
+
+                <div class="album-overlay">
+
+                    <h3>
+                        Weekend
+                    </h3>
+
+                    <p>
+                        Piccole fughe insieme
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOMENTI -->
+
+            <div
+                class="album"
+                onclick="openBook('Momenti')">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80">
+
+                <div class="heart">
+                    ❤️
+                </div>
+
+                <div class="album-overlay">
+
+                    <h3>
+                        Momenti
+                    </h3>
+
+                    <p>
+                        Le nostre giornate
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FESTE -->
+
+            <div
+                class="album"
+                onclick="openBook('Feste')">
+
+                <img
+                    src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=900&q=80">
+
+                <div class="heart">
+                    ❤️
+                </div>
+
+                <div class="album-overlay">
+
+                    <h3>
+                        Feste
+                    </h3>
+
+                    <p>
+                        Compleanni e occasioni speciali
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================
-     RICORDI
-========================= -->
+    <!-- TIMELINE -->
 
-<section class="section" id="ricordi">
+    <section class="timeline">
 
-    <div class="section-title">
+        <div class="section-title">
 
-        <div class="section-label">
-            Capitolo 02
-        </div>
-
-        <h2>
-            I nostri ricordi
-        </h2>
-
-        <p>
-            Ogni ricordo può diventare una pagina del vostro album.
-        </p>
-
-    </div>
-
-    <div class="memory-grid" id="memoryGrid">
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOTO
-========================= -->
-
-<section class="section" id="foto">
-
-    <div class="section-title">
-
-        <div class="section-label">
-            Capitolo 03
-        </div>
-
-        <h2>
-            Le nostre foto
-        </h2>
-
-        <p>
-            Tutti quei momenti che abbiamo deciso di conservare.
-        </p>
-
-    </div>
-
-    <div class="gallery-toolbar">
-
-        <div class="filters">
+            <h2>
+                Ultimi ricordi
+            </h2>
 
             <button
-                class="filter active"
-                onclick="filterPhotos('all',this)">
-                Tutte
-            </button>
+                class="add-button"
+                onclick="openMemoryModal()">
 
-            <button
-                class="filter"
-                onclick="filterPhotos('viaggio',this)">
-                Viaggi
-            </button>
+                + Aggiungi ricordo
 
-            <button
-                class="filter"
-                onclick="filterPhotos('quotidiano',this)">
-                Quotidiano
-            </button>
-
-            <button
-                class="filter"
-                onclick="filterPhotos('speciale',this)">
-                Momenti speciali
-            </button>
-
-        </div>
-
-    </div>
-
-    <div
-        class="gallery"
-        id="gallery">
-    </div>
-
-</section>
-
-
-<!-- =========================
-     LETTERA
-========================= -->
-
-<section class="section" id="lettera">
-
-    <div class="section-title">
-
-        <div class="section-label">
-            Capitolo 04
-        </div>
-
-        <h2>
-            Una lettera per te
-        </h2>
-
-    </div>
-
-    <div class="letter">
-
-        <div
-            class="letter-content"
-            id="letterContent">
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     GESTIONE
-========================= -->
-
-<section class="section" id="gestisci">
-
-    <div class="admin">
-
-        <div class="section-label">
-            Area album
-        </div>
-
-        <h2>
-            Aggiungi un nuovo ricordo
-        </h2>
-
-        <p class="admin-subtitle">
-            Crea una nuova pagina del vostro album.
-        </p>
-
-
-        <div class="form">
-
-            <input
-                id="memoryDate"
-                type="text"
-                placeholder="Data — es. 14 agosto 2026">
-
-            <input
-                id="memoryTitle"
-                type="text"
-                placeholder="Titolo — es. Il nostro viaggio">
-
-            <select id="memoryCategory">
-
-                <option value="Viaggio">
-                    Viaggio
-                </option>
-
-                <option value="Quotidiano">
-                    Quotidiano
-                </option>
-
-                <option value="Momento speciale">
-                    Momento speciale
-                </option>
-
-                <option value="Anniversario">
-                    Anniversario
-                </option>
-
-                <option value="Vacanza">
-                    Vacanza
-                </option>
-
-                <option value="Altro">
-                    Altro
-                </option>
-
-            </select>
-
-            <input
-                id="memoryPlace"
-                type="text"
-                placeholder="Luogo">
-
-            <textarea
-                id="memoryDescription"
-                class="full"
-                placeholder="Racconta questo ricordo...">
-            </textarea>
-
-        </div>
-
-        <div class="actions">
-
-            <button
-                class="primary"
-                onclick="addMemory()">
-                ❤️ Salva ricordo
-            </button>
-
-            <button
-                class="secondary"
-                onclick="restoreDefaults()">
-                Ripristina esempi
             </button>
 
         </div>
 
 
-        <hr
-            style="
-            border:0;
-            border-top:1px solid #514444;
-            margin:40px 0;
-            ">
+        <div id="memories">
+
+            <div class="memory">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
+
+                <div class="memory-info">
+
+                    <div class="memory-date">
+                        15 Agosto 2026
+                    </div>
+
+                    <h3>
+                        Una giornata speciale
+                    </h3>
+
+                    <p>
+                        Una di quelle giornate che vorremmo
+                        poter rivivere ancora.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-        <div class="section-label">
-            Fotografie
-        </div>
+            <div class="memory">
 
-        <h2>
-            Aggiungi foto
-        </h2>
+                <img
+                    src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=500&q=80">
 
-        <p class="admin-subtitle">
-            Puoi selezionare più fotografie contemporaneamente.
-        </p>
+                <div class="memory-info">
 
+                    <div class="memory-date">
+                        2 Agosto 2026
+                    </div>
 
-        <div class="form">
+                    <h3>
+                        Un piccolo viaggio
+                    </h3>
 
-            <input
-                id="photoCaption"
-                type="text"
-                placeholder="Didascalia">
+                    <p>
+                        Noi, una macchina e una nuova
+                        strada da scoprire.
+                    </p>
 
-            <select id="photoCategory">
+                </div>
 
-                <option value="quotidiano">
-                    Quotidiano
-                </option>
-
-                <option value="viaggio">
-                    Viaggio
-                </option>
-
-                <option value="speciale">
-                    Momento speciale
-                </option>
-
-            </select>
-
-            <input
-                id="photoFiles"
-                class="full"
-                type="file"
-                accept="image/*"
-                multiple>
-
-        </div>
-
-
-        <div class="actions">
-
-            <button
-                class="primary"
-                onclick="addPhotos()">
-                📸 Aggiungi foto
-            </button>
-
-            <button
-                class="secondary"
-                onclick="deleteAllPhotos()">
-                Elimina tutte le foto
-            </button>
+            </div>
 
         </div>
 
+    </section>
 
-        <p class="help">
-
-            Le fotografie vengono salvate localmente nel browser
-            di questo dispositivo.
-            Per un album realmente sincronizzato tra iPhone,
-            Mac e altri dispositivi, il prossimo passo sarà
-            collegare il progetto a un database privato.
-
-        </p>
-
-
-        <hr
-            style="
-            border:0;
-            border-top:1px solid #514444;
-            margin:40px 0;
-            ">
-
-
-        <div class="section-label">
-            Lettera
-        </div>
-
-        <h2>
-            Scrivi qualcosa per lei
-        </h2>
-
-        <div class="form">
-
-            <textarea
-                id="letterInput"
-                class="full"
-                placeholder="Scrivi qui la tua lettera...">
-            </textarea>
-
-        </div>
-
-        <div class="actions">
-
-            <button
-                class="primary"
-                onclick="saveLetter()">
-                💌 Salva lettera
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
+</div>
 
 
 <footer>
-    Fatto per custodire i vostri ricordi. ❤️
+
+    Fatto con <span>♥</span> per noi due
+
 </footer>
 
 
 <!-- =========================
-     LIGHTBOX
+     MODAL NUOVO ALBUM
 ========================= -->
 
 <div
-    class="lightbox"
-    id="lightbox"
-    onclick="closeLightbox()">
+    class="modal"
+    id="albumModal">
 
-    <button
-        class="lightbox-close"
-        onclick="closeLightbox()">
-        ×
-    </button>
+    <div class="modal-box">
 
-    <img
-        id="lightboxImage"
-        src=""
-        alt="Foto">
+        <button
+            class="close"
+            onclick="closeAlbumModal()">
 
-    <div
-        class="lightbox-caption"
-        id="lightboxCaption">
+            ×
+
+        </button>
+
+        <h2>
+            Crea un nuovo album ❤️
+        </h2>
+
+        <div class="field">
+
+            <label>
+                Nome dell'album
+            </label>
+
+            <input
+                id="albumName"
+                placeholder="Es. Estate 2026">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Descrizione
+            </label>
+
+            <input
+                id="albumDescription"
+                placeholder="Es. La nostra vacanza al mare">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Foto copertina
+            </label>
+
+            <div class="file">
+
+                <input
+                    type="file"
+                    id="albumCover"
+                    accept="image/*">
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="save"
+            onclick="createAlbum()">
+
+            Crea album
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MODAL RICORDO
+========================= -->
+
+<div
+    class="modal"
+    id="memoryModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeMemoryModal()">
+
+            ×
+
+        </button>
+
+        <h2>
+            Aggiungi un ricordo 📸
+        </h2>
+
+
+        <div class="field">
+
+            <label>
+                Titolo
+            </label>
+
+            <input
+                id="memoryTitle"
+                placeholder="Es. Il nostro tramonto">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Data
+            </label>
+
+            <input
+                type="date"
+                id="memoryDate">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Raccontaci questo momento
+            </label>
+
+            <textarea
+                id="memoryText"
+                placeholder="Scrivi qualcosa che vuoi ricordare..."></textarea>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Foto
+            </label>
+
+            <div class="file">
+
+                <input
+                    type="file"
+                    id="memoryImage"
+                    accept="image/*">
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="save"
+            onclick="createMemory()">
+
+            Salva ricordo ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LIBRO
+========================= -->
+
+<div
+    class="book-modal"
+    id="bookModal">
+
+    <div class="book">
+
+        <button
+            class="book-close"
+            onclick="closeBook()">
+
+            ×
+
+        </button>
+
+
+        <div
+            class="book-page"
+            id="page1">
+
+            <div class="page-content">
+
+                <div class="logo">
+                    IL NOSTRO ALBUM
+                </div>
+
+                <h1
+                    class="book-title"
+                    id="bookTitle">
+
+                    Vacanze
+
+                </h1>
+
+                <img
+                    class="book-photo"
+                    id="bookCover"
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85">
+
+                <p class="book-text">
+                    Ci sono posti che diventano speciali
+                    semplicemente perché li abbiamo
+                    vissuti insieme.
+                </p>
+
+            </div>
+
+            <div class="page-number">
+                1
+            </div>
+
+        </div>
+
+
+        <div
+            class="book-page"
+            id="page2">
+
+            <div class="page-content">
+
+                <div class="logo">
+                    UN RICORDO
+                </div>
+
+                <h1 class="book-title">
+                    Una giornata insieme
+                </h1>
+
+                <img
+                    class="book-photo"
+                    src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=85">
+
+                <p class="book-text">
+                    Non serve sempre andare lontano.
+                    A volte basta essere insieme,
+                    ridere, parlare e vivere una giornata
+                    che poi rimarrà per sempre.
+                </p>
+
+            </div>
+
+            <div class="page-number">
+                2
+            </div>
+
+        </div>
+
+
+        <div
+            class="book-page"
+            id="page3">
+
+            <div class="page-content">
+
+                <div class="logo">
+                    MOMENTO
+                </div>
+
+                <h1 class="book-title">
+                    Noi ❤️
+                </h1>
+
+                <img
+                    class="book-photo"
+                    src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1200&q=85">
+
+                <p class="book-text">
+                    E alla fine, tra tutti i ricordi,
+                    la cosa più bella rimane sempre
+                    la persona con cui li abbiamo vissuti.
+                </p>
+
+            </div>
+
+            <div class="page-number">
+                3
+            </div>
+
+        </div>
+
+
+        <div class="book-controls">
+
+            <button onclick="previousPage()">
+                ← Indietro
+            </button>
+
+            <button onclick="nextPage()">
+                Sfoglia →
+            </button>
+
+        </div>
+
     </div>
 
 </div>
@@ -1210,810 +1155,310 @@ footer{
 
 <script>
 
-/* =====================================================
-   DATI INIZIALI
-===================================================== */
-
-const defaultMemories = [
-
-    {
-        date:"Il giorno che ci siamo conosciuti",
-        title:"L'inizio di tutto",
-        category:"Momento speciale",
-        place:"",
-        description:
-        "Il giorno da cui è iniziata la nostra storia."
-    },
-
-    {
-        date:"Il nostro primo appuntamento",
-        title:"Solo noi due",
-        category:"Momento speciale",
-        place:"",
-        description:
-        "Quel giorno che sembrava normale e che invece è diventato un ricordo indimenticabile."
-    },
-
-    {
-        date:"Il nostro primo viaggio",
-        title:"Una nuova avventura",
-        category:"Viaggio",
-        place:"",
-        description:
-        "Il primo viaggio fatto insieme."
-    },
-
-    {
-        date:"Un giorno qualsiasi",
-        title:"Le piccole cose",
-        category:"Quotidiano",
-        place:"",
-        description:
-        "Perché non servono grandi occasioni. A volte basta stare insieme."
-    }
-
-];
-
-
-const defaultLetter =
-`Alla persona che rende speciali anche le giornate più normali.
-
-Ci sono momenti che vorrei poter conservare per sempre.
-Le risate, gli abbracci, i viaggi, le serate passate insieme
-e anche tutte quelle piccole cose che magari sembrano insignificanti.
-
-Questo album nasce proprio per questo.
-
-Per non dimenticare.
-
-Per poter tornare qui tra qualche anno e rivedere tutto quello
-che abbiamo vissuto.
-
-E soprattutto per ricordarmi che la parte più bella della storia
-deve ancora essere scritta.
-
-Ti amo. ❤️`;
-
-
-/* =====================================================
-   UTILITY
-===================================================== */
-
-function escapeHTML(value){
-
-    return String(value)
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-
-}
-
-
-/* =====================================================
-   NAVIGAZIONE
-===================================================== */
-
-function goTo(id){
-
-    const element = document.getElementById(id);
-
-    if(element){
-
-        element.scrollIntoView({
-            behavior:"smooth"
-        });
-
-    }
-
-}
-
-
-/* =====================================================
-   RICORDI
-===================================================== */
-
-function getMemories(){
-
-    const saved =
-        localStorage.getItem("tu_e_io_memories");
-
-    if(!saved){
-
-        return defaultMemories;
-
-    }
-
-    try{
-
-        return JSON.parse(saved);
-
-    }catch(error){
-
-        return defaultMemories;
-
-    }
-
-}
-
-
-function saveMemories(memories){
-
-    localStorage.setItem(
-        "tu_e_io_memories",
-        JSON.stringify(memories)
-    );
-
-}
-
-
-function renderMemories(){
-
-    const memories = getMemories();
-
-    const grid =
-        document.getElementById("memoryGrid");
-
-    const timeline =
-        document.getElementById("timeline");
-
-
-    if(memories.length === 0){
-
-        grid.innerHTML = `
-            <div class="empty">
-                Non hai ancora aggiunto ricordi.
-                <br>
-                Vai nella sezione “+ Aggiungi”.
-            </div>
-        `;
-
-        timeline.innerHTML = "";
-
-        return;
-
-    }
-
-
-    grid.innerHTML = memories.map(
-        (memory,index)=>`
-
-            <article class="memory-card">
-
-                <div class="memory-category">
-                    ${escapeHTML(memory.category)}
-                </div>
-
-                <h3>
-                    ${escapeHTML(memory.title)}
-                </h3>
-
-                <div class="memory-info">
-
-                    ${escapeHTML(memory.date)}
-
-                    ${
-                        memory.place
-                        ?
-                        " · " + escapeHTML(memory.place)
-                        :
-                        ""
-                    }
-
-                </div>
-
-                <p>
-                    ${escapeHTML(memory.description)}
-                </p>
-
-                <button
-                    class="secondary"
-                    onclick="deleteMemory(${index})">
-
-                    Elimina
-
-                </button>
-
-            </article>
-
-        `
-    ).join("");
-
-
-    timeline.innerHTML = memories.map(
-        memory=>`
-
-            <div class="timeline-item">
-
-                <div class="timeline-date">
-                    ${escapeHTML(memory.date)}
-                </div>
-
-                <h3>
-                    ${escapeHTML(memory.title)}
-                </h3>
-
-                <div
-                    style="
-                    color:var(--muted);
-                    font-family:Arial,sans-serif;
-                    font-size:12px;
-                    ">
-
-                    ${escapeHTML(memory.category)}
-
-                </div>
-
-            </div>
-
-        `
-    ).join("");
-
-}
-
-
-function addMemory(){
-
-    const date =
-        document.getElementById("memoryDate")
-        .value.trim();
-
-    const title =
-        document.getElementById("memoryTitle")
-        .value.trim();
-
-    const category =
-        document.getElementById("memoryCategory")
-        .value;
-
-    const place =
-        document.getElementById("memoryPlace")
-        .value.trim();
-
-    const description =
-        document.getElementById("memoryDescription")
-        .value.trim();
-
-
-    if(!title){
-
-        alert("Inserisci un titolo per il ricordo.");
-
-        return;
-
-    }
-
-
-    if(!description){
-
-        alert("Scrivi almeno una breve descrizione.");
-
-        return;
-
-    }
-
-
-    const memories = getMemories();
-
-
-    memories.unshift({
-
-        date:
-            date || "Un giorno speciale",
-
-        title,
-
-        category,
-
-        place,
-
-        description
-
-    });
-
-
-    saveMemories(memories);
-
-    document.getElementById("memoryDate").value="";
-    document.getElementById("memoryTitle").value="";
-    document.getElementById("memoryPlace").value="";
-    document.getElementById("memoryDescription").value="";
-
-
-    renderMemories();
-
-    alert("Ricordo aggiunto ❤️");
-
-}
-
-
-function deleteMemory(index){
-
-    const memories =
-        getMemories();
-
-    if(
-        !confirm(
-            "Vuoi eliminare questo ricordo?"
-        )
-    ){
-
-        return;
-
-    }
-
-
-    memories.splice(index,1);
-
-    saveMemories(memories);
-
-    renderMemories();
-
-}
-
-
-function restoreDefaults(){
-
-    if(
-        !confirm(
-            "Vuoi ripristinare i ricordi di esempio?"
-        )
-    ){
-
-        return;
-
-    }
-
-
-    localStorage.removeItem(
-        "tu_e_io_memories"
-    );
-
-    renderMemories();
-
-}
-
-
-/* =====================================================
-   FOTO
-===================================================== */
-
-function getPhotos(){
-
-    const saved =
-        localStorage.getItem("tu_e_io_photos");
-
-    if(!saved){
-
-        return [];
-
-    }
-
-    try{
-
-        return JSON.parse(saved);
-
-    }catch(error){
-
-        return [];
-
-    }
-
-}
-
-
-function savePhotos(photos){
-
-    localStorage.setItem(
-        "tu_e_io_photos",
-        JSON.stringify(photos)
-    );
-
-}
-
-
-let currentFilter = "all";
-
-
-function renderPhotos(){
-
-    const photos =
-        getPhotos();
-
-    const gallery =
-        document.getElementById("gallery");
-
-
-    let filtered = photos;
-
-
-    if(currentFilter !== "all"){
-
-        filtered =
-            photos.filter(
-                photo =>
-                photo.category === currentFilter
-            );
-
-    }
-
-
-    if(filtered.length === 0){
-
-        gallery.innerHTML = `
-
-            <div class="empty">
-
-                ${
-                    photos.length === 0
-                    ?
-                    "Non ci sono ancora fotografie.<br>Aggiungine alcune dalla sezione “+ Aggiungi”."
-                    :
-                    "Non ci sono foto in questa categoria."
-                }
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    gallery.innerHTML =
-        filtered.map(
-            photo=>`
-
-            <div
-                class="photo-card"
-                onclick="openLightbox('${photo.id}')">
-
-                <img
-                    src="${photo.data}"
-                    alt="Ricordo">
-
-                <div class="photo-overlay">
-
-                    ${escapeHTML(
-                        photo.caption ||
-                        "Un nostro ricordo ❤️"
-                    )}
-
-                </div>
-
-                <button
-                    class="photo-delete"
-                    onclick="event.stopPropagation();deletePhoto('${photo.id}')">
-
-                    ×
-
-                </button>
-
-            </div>
-
-        `
-        ).join("");
-
-}
-
-
-function filterPhotos(filter,button){
-
-    currentFilter = filter;
-
+/* =========================
+   ALBUM MODAL
+========================= */
+
+function openAlbumModal(){
 
     document
-        .querySelectorAll(".filter")
-        .forEach(
-            item =>
-            item.classList.remove("active")
-        );
+        .getElementById("albumModal")
+        .classList.add("active");
 
+}
 
-    button.classList.add("active");
+function closeAlbumModal(){
 
-    renderPhotos();
+    document
+        .getElementById("albumModal")
+        .classList.remove("active");
 
 }
 
 
-function addPhotos(){
+/* =========================
+   MEMORY MODAL
+========================= */
 
-    const input =
-        document.getElementById("photoFiles");
+function openMemoryModal(){
 
-    const files =
-        [...input.files];
+    document
+        .getElementById("memoryModal")
+        .classList.add("active");
+
+}
+
+function closeMemoryModal(){
+
+    document
+        .getElementById("memoryModal")
+        .classList.remove("active");
+
+}
 
 
-    if(files.length === 0){
+/* =========================
+   CREATE MEMORY
+========================= */
 
-        alert(
-            "Seleziona almeno una fotografia."
-        );
+function createMemory(){
+
+    const title =
+        document.getElementById("memoryTitle").value;
+
+    const date =
+        document.getElementById("memoryDate").value;
+
+    const text =
+        document.getElementById("memoryText").value;
+
+    const image =
+        document.getElementById("memoryImage").files[0];
+
+    if(!title || !date || !image){
+
+        alert("Inserisci almeno titolo, data e foto ❤️");
 
         return;
 
     }
 
+    const reader = new FileReader();
 
-    const caption =
-        document.getElementById("photoCaption")
-        .value.trim();
+    reader.onload = function(e){
 
-    const category =
-        document.getElementById("photoCategory")
-        .value;
+        const memory =
+            document.createElement("div");
 
+        memory.className = "memory";
 
-    const photos =
-        getPhotos();
+        memory.innerHTML = `
 
+            <img src="${e.target.result}">
 
-    let completed = 0;
+            <div class="memory-info">
 
+                <div class="memory-date">
+                    ${formatDate(date)}
+                </div>
 
-    files.forEach(file=>{
+                <h3>
+                    ${escapeHTML(title)}
+                </h3>
 
-        const reader =
-            new FileReader();
+                <p>
+                    ${escapeHTML(text)}
+                </p>
 
+            </div>
 
-        reader.onload = function(event){
+        `;
 
-            photos.unshift({
+        document
+            .getElementById("memories")
+            .prepend(memory);
 
-                id:
-                    Date.now().toString()
-                    +
-                    Math.random()
-                    .toString(36)
-                    .substring(2),
+        closeMemoryModal();
 
-                data:event.target.result,
+    };
 
-                caption:
+    reader.readAsDataURL(image);
 
-                    caption ||
-                    "Un nostro ricordo ❤️",
-
-                category
-
-            });
+}
 
 
-            completed++;
+/* =========================
+   CREATE ALBUM
+========================= */
 
+function createAlbum(){
 
-            if(completed === files.length){
+    const name =
+        document.getElementById("albumName").value;
 
-                try{
+    const description =
+        document.getElementById("albumDescription").value;
 
-                    savePhotos(photos);
+    const image =
+        document.getElementById("albumCover").files[0];
 
-                    input.value="";
+    if(!name || !image){
 
-                    document.getElementById(
-                        "photoCaption"
-                    ).value="";
+        alert("Inserisci il nome e una foto di copertina ❤️");
 
-                    renderPhotos();
+        return;
 
-                    alert(
-                        files.length === 1
-                        ?
-                        "Foto aggiunta ❤️"
-                        :
-                        files.length +
-                        " foto aggiunte ❤️"
-                    );
+    }
 
-                }catch(error){
+    const reader = new FileReader();
 
-                    alert(
-                        "Il browser non ha abbastanza spazio per queste foto. " +
-                        "Per un album con moltissime fotografie conviene " +
-                        "collegare un archivio cloud/database."
-                    );
+    reader.onload = function(e){
 
-                }
+        const album =
+            document.createElement("div");
 
-            }
+        album.className = "album";
+
+        album.onclick = function(){
+
+            openBook(name);
 
         };
 
+        album.innerHTML = `
 
-        reader.readAsDataURL(file);
+            <img src="${e.target.result}">
 
-    });
+            <div class="heart">
+                ❤️
+            </div>
+
+            <div class="album-overlay">
+
+                <h3>
+                    ${escapeHTML(name)}
+                </h3>
+
+                <p>
+                    ${escapeHTML(description)}
+                </p>
+
+            </div>
+
+        `;
+
+        document
+            .getElementById("albums")
+            .appendChild(album);
+
+        closeAlbumModal();
+
+    };
+
+    reader.readAsDataURL(image);
 
 }
 
 
-function deletePhoto(id){
+/* =========================
+   BOOK
+========================= */
 
-    if(
-        !confirm(
-            "Vuoi eliminare questa fotografia?"
-        )
-    ){
+let currentPage = 1;
 
-        return;
+function openBook(title){
 
-    }
+    currentPage = 1;
 
+    document
+        .getElementById("bookTitle")
+        .textContent = title;
 
-    const photos =
-        getPhotos().filter(
-            photo => photo.id !== id
-        );
+    document
+        .getElementById("bookModal")
+        .classList.add("active");
 
+    document
+        .querySelectorAll(".book-page")
+        .forEach(page => {
 
-    savePhotos(photos);
+            page.classList.remove("flipped");
 
-    renderPhotos();
+        });
 
 }
 
 
-function deleteAllPhotos(){
+function closeBook(){
 
-    if(
-        !confirm(
-            "ATTENZIONE: vuoi eliminare tutte le fotografie?"
-        )
-    ){
+    document
+        .getElementById("bookModal")
+        .classList.remove("active");
 
-        return;
+}
+
+
+function nextPage(){
+
+    if(currentPage < 3){
+
+        document
+            .getElementById("page" + currentPage)
+            .classList.add("flipped");
+
+        currentPage++;
 
     }
 
+}
 
-    localStorage.removeItem(
-        "tu_e_io_photos"
+
+function previousPage(){
+
+    if(currentPage > 1){
+
+        currentPage--;
+
+        document
+            .getElementById("page" + currentPage)
+            .classList.remove("flipped");
+
+    }
+
+}
+
+
+/* =========================
+   HELPERS
+========================= */
+
+function formatDate(date){
+
+    const d =
+        new Date(date + "T00:00:00");
+
+    return d.toLocaleDateString(
+        "it-IT",
+        {
+            day:"numeric",
+            month:"long",
+            year:"numeric"
+        }
     );
 
-    renderPhotos();
+}
+
+
+function escapeHTML(text){
+
+    return String(text || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 
-/* =====================================================
-   LIGHTBOX
-===================================================== */
-
-function openLightbox(id){
-
-    const photo =
-        getPhotos().find(
-            item => item.id === id
-        );
-
-
-    if(!photo){
-
-        return;
-
-    }
-
-
-    document.getElementById(
-        "lightboxImage"
-    ).src = photo.data;
-
-
-    document.getElementById(
-        "lightboxCaption"
-    ).textContent =
-        photo.caption || "";
-
-
-    document
-        .getElementById("lightbox")
-        .classList.add("open");
-
-}
-
-
-function closeLightbox(){
-
-    document
-        .getElementById("lightbox")
-        .classList.remove("open");
-
-}
-
+/* =========================
+   ESC PER CHIUDERE
+========================= */
 
 document.addEventListener(
     "keydown",
-    function(event){
+    function(e){
 
-        if(event.key === "Escape"){
+        if(e.key === "Escape"){
 
-            closeLightbox();
+            closeBook();
+            closeAlbumModal();
+            closeMemoryModal();
 
         }
 
     }
 );
-
-
-/* =====================================================
-   LETTERA
-===================================================== */
-
-function loadLetter(){
-
-    const saved =
-        localStorage.getItem(
-            "tu_e_io_letter"
-        );
-
-
-    const letter =
-        saved || defaultLetter;
-
-
-    document.getElementById(
-        "letterContent"
-    ).textContent = letter;
-
-
-    document.getElementById(
-        "letterInput"
-    ).value = letter;
-
-}
-
-
-function saveLetter(){
-
-    const text =
-        document.getElementById(
-            "letterInput"
-        ).value.trim();
-
-
-    if(!text){
-
-        alert(
-            "Scrivi qualcosa nella lettera."
-        );
-
-        return;
-
-    }
-
-
-    localStorage.setItem(
-        "tu_e_io_letter",
-        text
-    );
-
-
-    document.getElementById(
-        "letterContent"
-    ).textContent = text;
-
-
-    alert(
-        "La lettera è stata salvata ❤️"
-    );
-
-}
-
-
-/* =====================================================
-   AVVIO
-===================================================== */
-
-renderMemories();
-
-renderPhotos();
-
-loadLetter();
 
 </script>
 
